@@ -1,16 +1,29 @@
 // Test using EXAMPLE functions given below each function.
 
 /*
-  Create a function named addTwo which accepts a number, adds 2 to the number and return the new value.
+  Create a function named addTwo which accepts a number, adds 2 to the number and return the new value
+
 */
+
+function addTwo(num) {
+  return num + 2;
+}
 
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
 */
 
+function addThree(num) {
+  return num + 3;
+}
+
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
 */
+
+function addFive(num) {
+  return num + 5;
+}
 
 /*
   Create a function named addTwoToArray which accepts:
@@ -19,6 +32,16 @@
     - While doing so use the funciton addTwo
 */
 
+function addTwoToArray(arr) {
+  let arr2 = [];
+  function addTwo(number) {
+    return num + 2;
+  }
+  for(let num of arr) {
+    arr2.push(num);
+  }
+  return arr2;
+}
 /*
   Create a function named addThreeToArray which accepts:
     - an array of numbers
