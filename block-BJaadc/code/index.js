@@ -26,19 +26,19 @@ console.log(message.indexOf('answers'));
 
 // Log true or false based on whether the word "answers" exist in message or not
 
-console.log(message.includes("answers"));
+console.log(message.includes("answers" !== -1));
 
 // Log true or false based on whether the word "they" exist in message or not
 
-console.log(message.includes("they"));
+console.log(message.includes("they" !== -1));
 
 // Log true or false based on whether the word "is" exist in message or not
 
-console.log(message.includes("is"));
+console.log(message.includes("is" !== -1));
 
 // Log true or false based on whether the word "Is" exist in message or not
 
-console.log(message.includes("Is"));
+console.log(message.includes("Is" !== -1));
 
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
 
@@ -48,6 +48,10 @@ if (message.slice(3,6) === 'you') {
         console.log(false);
     };
 
+// Or
+
+console.log(message.slice(3,6) === 'you');
+
 // Check and log whether the word from index 7 to 8 is "a" or not
 
 if (message.slice(7,8) === 'a') {
@@ -55,6 +59,10 @@ if (message.slice(7,8) === 'a') {
     } else {
         console.log(false);
     };
+
+    // Or
+
+console.log(message.slice(7,8) === 'you');
 
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
 
@@ -85,18 +93,15 @@ console.log(message.toUpperCase());
 let newMessage = message.replace("are", `can't`);
 console.log(newMessage);
 
-
 // Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
 
-let newMessage = message.replace("still", "");
-let newMessage2 = newMessage
-console.log(newMessage2);
+let newMessage = newMessage.replace("still", "");
+console.log(newMessage);
 
 // Replace the word "thinking" to "decide" using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
 
-let newMessage2 = message.replace("thinking", "decide");
-let newMessage3 = newMessage
-console.log(newMessage3);
+let newMessage2 = newMessage.replace("thinking", "decide");
+console.log(newMessage);
 
 // Log all the characters from the message variable (you can user for..of loop on string)
 
@@ -104,6 +109,12 @@ let characters = message.split("");
 
 for(let character of characters) {
     console.log(character);
+};
+
+// NOTE: A string behaves like an array, so no need to split first! This is also ok: 
+
+for(let char of message) {
+    console.log(char);
 };
 
 // Split all the words in message (split by " " space) and store it in a variable messageArray
