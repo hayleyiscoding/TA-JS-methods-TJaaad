@@ -21,7 +21,7 @@ quote.charAt(indexOfIs);
 3. Log the message saying `The index of first is in quote is 7`
 */
 
-console.log(`The index os the first is in quote is ${indexOfIs}`)
+console.log(`The index of the first is in quote is ${quote.charAt(indexOfIs)}`)
 
 /*
 4. Log the message for first 6 characters of quote like this.
@@ -33,8 +33,8 @@ console.log(`The index os the first is in quote is ${indexOfIs}`)
   The character at index 5 is ' '
 */
 
-for(let char of quote) {
-  console.log(`The character at index ${}`)
+for(let i = 0; i < 6; i++) {
+  console.log(`The character at index ${i} is ${quote[i]}`);
 }
 
 /*
@@ -94,13 +94,13 @@ quote.indexOf('o', 11);
 13. Find the last index of letter "a" in quote.
 */
 
-quote.lastIndexOf('a');
+let lastIndexofA = quote.lastIndexOf('a');
 
 /*
 14. Find the second last index of letter "a" in quote.
 */
 
-quote.lastIndexOf('a', 47);
+quote.lastIndexOf('a', lastIndexOfA - 1);
 
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
@@ -108,13 +108,31 @@ Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 */
 
-quote.padEnd(70, '.');
+// NO quote.padEnd(70, '.');
+
+// Or 
+
+let max = 70;
+let length = quote.length
+
+let newQuote = quote + '.'.repeat(max - length);
+
+// OR 
+
+for(let i = length; i <= max; i++){
+  quote = quote + ".";
+  length = quote.length;
+}
 
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
 
-let padStartQuote = quote.padStart(70, '.');
+// NO let padStartQuote = quote.padStart(70, '.');
+
+//Or 
+
+let newStartQuote = '.'.repeat(max - length) + quote;
 
 /*
 17. Log the repeat of "Hello World!" 10 times.
@@ -141,10 +159,14 @@ to.replace('Stark', 'Lannister');
 let quoteTrimmed = quote.slice(0,30);
 quoteTrimmed.padEnd(33,'.');
 
+// Or
+
+let quoteTrimmed = quote.slice(0,30) + '...';
+
 /*
 21. Find out does quote, from, to starts with "A"
 */
 
-quote.charAt(0) === 'A';
-to.charAt(0) === 'A';
-from.charAt(0) === 'A';
+console.log(quote.startsWith('A'));
+console.log(to.startsWith('A'));
+console.log(from.startsWith('A'));
