@@ -17,17 +17,82 @@ let persons = [
 
 // Find the average grade
 
+let peopleGrades = persons.map((person) => person.grade);
+
+let averageGrade = peopleGrades.reduce(
+  (acc, cv) => {
+  acc = acc + cv
+  return acc;
+  }) / peopleGrades.length;
+
+  console.log(averageGrade);
+
 // Find the average grade of male
+
+let isMaleGrade = persons
+.filter(
+  (person) =>
+  person.sex === 'M')
+.map(
+  (person) =>
+  person.grade)
+
+
+let isMaleGradeAverage = isMaleGrade.reduce(
+  (acc, cv) => {
+  acc = acc + cv;
+  return acc;
+  }, 0);
+
+console.log(isMaleGradeAverage/isMaleGrade.length);
 
 // Find the average grade of female
 
+let isFemaleGrade = persons
+.filter(
+  (person) =>
+  person.sex === 'F')
+.map(
+  (person) =>
+  person.grade)
+
+
+let isFemaleGradeAverage = isFemaleGrade.reduce(
+  (acc, cv) => {
+  acc = acc + cv;
+  return acc;
+  }, 0);
+
+console.log(isFemaleGradeAverage/isFemaleGrade.length);
+
 // Find the highest grade
+
+let highestGrade = [...peopleGrades].sort((a, b) => a - b).pop();
 
 // Find the highest grade in male
 
+let highestGradeMale = [...isMaleGrade].sort((a, b) => a - b).pop();
+
 // Find the highest grade in female
 
+let highestGradeFemale = [...isFemaleGrade].sort((a, b) => a - b).pop();
+
 // Find the highest grade for people whose name starts with 'J' or 'P'
+
+let gradeJp = persons
+.filter(
+  (person) =>
+  person.name.startsWith('J') ||
+  person.name.startsWith('P')
+)
+.map(
+  (person) => 
+  person.grade
+)
+
+let highestGradeJp = [...gradeJp].sort((a, b) => a - b).pop()
+
+console.log(highestGradeJp);
 
 const fruitBasket = [
   'banana',
@@ -52,6 +117,8 @@ Output:
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
 
+let numberofTimes = fruitbasket.find
+
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -71,6 +138,8 @@ const data = [
 
 // Using reduce flat data array
 
+data.flat(infinity);
+
 const dataTwo = [
   [1, 2, 3],
   [4, 5, 6],
@@ -79,6 +148,8 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
+
+dataTwo.flat(infinity);
 
 /*
 
@@ -89,6 +160,28 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+
+function increment(num) {
+  return num + 1;
+}
+
+function double(num) {
+  return num * 2;
+}
+
+function decrement(num) {
+  return num - 1;
+}
+
+function triple(num) {
+  return num * 3;
+}
+
+function half(num) {
+  let dividedBy2 = num / 2;
+  return Math.round(dividedBy2);
+}
+
 
 let pipeline = [
   increment,
@@ -114,6 +207,8 @@ EXAMPLE:
 
   ...
 */
+
+
 
 let pipeline2 = [
   increment,
